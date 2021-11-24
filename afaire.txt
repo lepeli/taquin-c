@@ -1,0 +1,6 @@
+- bouton jouer / quitter pour éviter les merdes des textes
+- créer des fonctions pour réduire les fonctions principales (créercadre, etc)
+- curseur clavier (multi cadre bleu / bleu clair / blanc)
+- gérer création (?) dans boucle while (1) pour gérer curseur clavier
+
+- tests coupage image
