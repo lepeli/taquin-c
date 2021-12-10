@@ -1,15 +1,15 @@
 #include <graph.h>
-#include <stdio.h> // pour pos_souris
+#include <stdio.h> /* pour pos_souris */
 #include <stdlib.h>
 #define LONGFENETR 1200
 #define HAUTFENETR 800
 
 void ecrantitre(void){
 
-	int x,y; // pour pos souris
+	int x,y; /* pour pos souris */
 
-	x=_X; // pour pos souris
-	y=_Y; // pour pos souris
+	x=_X; /* pour pos souris */ 
+	y=_Y; /* pour pos souris */
 
 	int choiximage;
 	couleur c;
@@ -21,11 +21,11 @@ void ecrantitre(void){
 	CreerFenetre(0,0,LONGFENETR,HAUTFENETR);
 	c=CouleurParNom("black");
 	ChoisirCouleurDessin(c);
-	ChargerImageFond("./xp.jpg");
-	ChargerImage("./logo2.png",525,0,0,0,150,150);
-	ChargerImage("./ani2.jpg",25,350,0,0,350,350);
-	ChargerImage("./ani3.jpg",487,350,0,0,350,350);
-	ChargerImage("./ani4.jpg",950,350,0,0,350,350);
+	ChargerImageFond("./images/xp.jpg");
+	ChargerImage("./images/logo2.png",525,0,0,0,150,150);
+	ChargerImage("./images/ani2.jpg",25,350,0,0,350,350);
+	ChargerImage("./images/ani3.jpg",487,350,0,0,350,350);
+	ChargerImage("./images/ani4.jpg",950,350,0,0,350,350);
 	DessinerRectangle(25,350,225,225);
 	DessinerRectangle(487,350,225,225);
 	DessinerRectangle(950,350,225,225);
@@ -46,27 +46,27 @@ void ecrantitre(void){
 	while (1){
 
 		if (nbrlignes==3){
-			ChargerImage("./tailles.png",584,295,5,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,5,5,32,30);
 		}
 
 		if (nbrlignes==4){
-			ChargerImage("./tailles.png",584,295,47,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,47,5,32,30);
 		}
 
 		if (nbrlignes==5){
-			ChargerImage("./tailles.png",584,295,87,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,87,5,32,30);
 		}
 
 		if (nbrlignes==6){
-			ChargerImage("./tailles.png",584,295,127,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,127,5,32,30);
 		}
 
 		if (nbrlignes==7){
-			ChargerImage("./tailles.png",584,295,167,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,167,5,32,30);
 		}
 
 		if (nbrlignes==8){
-			ChargerImage("./tailles.png",584,295,206,5,32,30);
+			ChargerImage("./images/tailles.png",584,295,206,5,32,30);
 		}
 
 		if (choiximage==1){
@@ -151,11 +151,11 @@ void ecranvictoire(void){
 	couleur c;
 	
 	ChoisirEcran(2);
-	ChargerImageFond("./xp.jpg");
-	ChargerImage("./victorydenis.png",350,150,0,0,480,359);
+	ChargerImageFond("./images/xp.jpg");
+	ChargerImage("./images/victorydenis.png",350,150,0,0,480,359);
 	c=CouleurParNom("red");
 	ChoisirCouleurDessin(c);
-	EcrireTexte(100,100,"VIKTOIRRRRRRRRRRR !!!!!!!!!",1); // marche pas
+	EcrireTexte(100,100,"VIKTOIRRRRRRRRRRR !!!!!!!!!",1); /* marche pas */
 	CopierZone(2,0,0,0,1200,800,0,0);
 	c=CouleurParNom("gray");
 	ChoisirCouleurDessin(c);
@@ -181,7 +181,7 @@ void ecranvictoire(void){
 
 
 
-void pos_souris(){ // affiche la pos de la souris dans la console à chaque clic
+void pos_souris(){ /* affiche la pos de la souris dans la console à chaque clic */
 	char t[50];
 	int x,y,ty,tx;   
 	couleur c;
@@ -211,7 +211,7 @@ void affichage(void){ /*Gère l'affichage de l'écran titre */
 	while(1){
 		ecrantitre();
 		ecranvictoire();
-		//pos_souris();
+		/* pos_souris(); */
 	}
 }
 
