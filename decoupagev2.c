@@ -55,9 +55,11 @@ void printcase(int casevoulue){
      lignecase=0;
 
      /* à utiliser :  */
-     /* largeurimage / hauteurimage / decoupagecolonne / decoupageligne / suite */
+     /* decoupagecolonne / decoupageligne / suite */
      
      casevoulue=suite[x][y]; /* à intégrer avec fonction random */
+
+     /* pour déroulé jeu : possibilité de reparcourir ce code avec un "cache" pour ne charger l'image que quand il y a besoin d'un changement */
 
        printf("%d ", casevoulue); /* pour vérif */
    while(casevoulue>=decoupagecolonne){
