@@ -28,7 +28,7 @@ void printcase(int casevoulue){
   int x,y;
   int largeurcasecree, hauteurcasecree;
 
-  int suite[]={1,0,8,5,3,4,6,7,2,10,9,11,12,14,13,15};
+  int suite[8][8];
   int compteursuite=0;
   
   ChoisirEcran(3);
@@ -53,10 +53,13 @@ void printcase(int casevoulue){
      for (y=0; y<decoupagecolonne; y++){
        
      lignecase=0;
-       casevoulue=suite[compteursuite];
+
+     /* à utiliser :  */
+     /* largeurimage / hauteurimage / decoupagecolonne / decoupageligne / suite */
+     
+     casevoulue=suite[x][y]; /* à intégrer avec fonction random */
 
        printf("%d ", casevoulue); /* pour vérif */
-       compteursuite++;
    while(casevoulue>=decoupagecolonne){
      casevoulue=casevoulue-decoupagecolonne;
      lignecase++;
@@ -64,8 +67,10 @@ void printcase(int casevoulue){
 
    largeurcasecree=largeurimage/decoupagecolonne*casevoulue; 
    hauteurcasecree=hauteurimage/decoupageligne*lignecase;
+   if (casevoulue != 0 && lignecase != 0){
       ChargerImage("./victorydenis.png",700+largeurimagecree+decalage,hauteurimagecree+decalagehauteur,largeurcasecree, hauteurcasecree, largeurimage/decoupagecolonne, hauteurimage/decoupageligne);
       largeurimagecree=largeurimagecree+(largeurimage/decoupagecolonne);
+   }
       decalage=decalage+5;
      }
     hauteurimagecree=hauteurimagecree+(hauteurimage/decoupageligne);
