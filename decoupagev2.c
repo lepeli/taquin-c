@@ -5,7 +5,7 @@
 #define LONGFENETR 1400
 #define HAUTFENETR 800
 
-void printcase(int grille[8][8]){
+void printcase(int grille[8][8], int decoupageligne, int decoupagecolonne){
     int casevoulue;
     couleur coul;
 
@@ -14,10 +14,7 @@ void printcase(int grille[8][8]){
 
     int hauteurimage, largeurimage, lignevoulue, colonnevoulue;
     int choiximage;
-    int decoupageligne, decoupagecolonne;
     choiximage=2;
-    decoupageligne=4;
-    decoupagecolonne=4;
     int bouclehauteur=0, bouclelargeur=0;
     int decalage=0,decalagehauteur=0;
 
@@ -48,8 +45,8 @@ void printcase(int grille[8][8]){
 
     /* autres choix image */
 
-    for (x=0; x<decoupageligne; x++){
-        for (y=0; y<decoupagecolonne; y++){
+    for (x=0; x < decoupageligne; x++){
+        for (y=0; y < decoupagecolonne; y++){
 
         lignecase=0;
 

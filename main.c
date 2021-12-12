@@ -23,7 +23,7 @@ int main(void){
     InitialiserGraphique();
     CreerFenetre(0,0, LONGFENETR, HAUTFENETR);
     ChoisirTitreFenetre("Taquin");
-    printcase(grille);
+    printcase(grille, 3,3);
     /* ecrantitre(); */
 
     return EXIT_SUCCESS;
