@@ -1,5 +1,6 @@
-main.out: main.o generateur.o mouvements_controller.o mouvements_helper.o generateur.o graphisme_victoire.o graphisme_accueil.o
-	gcc mouvements_controller.o mouvements_helper.o generateur.o main.o -o main.out
+OFILES = main.o mouvements_controller.o mouvements_helper.o generateur.o graphisme_victoire.o graphisme_accueil.o
+main.out: $(OFILES)
+	gcc ${OFILES} -o main.out -lgraph
 mouvements_controller.o: mouvements_helper.o mouvements_controller.h mouvements_controller.c
 	gcc -ansi -c mouvements_controller.c
 mouvements_helper.o: mouvements_helper.c mouvements_helper.h
