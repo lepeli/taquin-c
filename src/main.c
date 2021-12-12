@@ -25,7 +25,7 @@ int main(void){
     generation_grille(grille, nbLignes, nbColonnes);
 
     ChoisirTitreFenetre("Taquin");
-    printcase(grille, nbLignes, nbColonnes, choiximage);
+    printgrille(grille, nbLignes, nbColonnes, choiximage);
 
     return EXIT_SUCCESS;
 }

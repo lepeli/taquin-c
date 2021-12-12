@@ -4,7 +4,7 @@
 #include<string.h>
 #include"constants.h"
 
-void printcase(int grille[8][8], int decoupageligne, int decoupagecolonne, int choiximage){
+void printgrille(int grille[8][8], int decoupageligne, int decoupagecolonne, int choiximage){
     int casevoulue;
     int caseactuelle;
     couleur coul;
