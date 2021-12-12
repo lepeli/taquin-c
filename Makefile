@@ -12,3 +12,6 @@ graphisme_victoire.o: graphisme_victoire.c graphisme_victoire.h
 	gcc -ansi -c graphisme_victoire.c
 graphisme_accueil.o: graphisme_accueil.c graphisme_accueil.h
 	gcc -ansi -c graphisme_accueil.c 
+clean:
+	rm *.o *.out
+.PHONY: clean
