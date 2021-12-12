@@ -21,7 +21,7 @@ void initialisation_grille(int nbLignes, int nbColonnes, int tab[8][8]){
     }
 
     for(i=0; i < (nbLignes * nbColonnes); i++){
-        tab[i / nbColonnes][i%nbColonnes] = i; /* On insère les chiffres pour créer une grille initiale */ 
+        tab[i / nbColonnes][i % nbColonnes] = i; /* On insère les chiffres pour créer une grille initiale */ 
     }
 
 }

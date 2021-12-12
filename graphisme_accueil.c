@@ -12,12 +12,18 @@ void ecrantitre(void){
 
 	int x,y; /* pour pos souris */
 
-	x=_X; /* pour pos souris */ 
+	x=_X; /* pour pos souris */
 	y=_Y; /* pour pos souris */
 
-	int choiximage;
+	int choiximage=0;
 	couleur c;
 	int nbrlignes=3;
+	int hauteurImage;
+	int LargeurImage;
+	int curseurClavierLigne=0;
+	int curseurClavierColonne=0;
+
+	KeySym t;
 
 	InitialiserGraphique();
 
@@ -26,11 +32,11 @@ void ecrantitre(void){
 	ChoisirTitreFenetre("Taquin");
 	c=CouleurParNom("black");
 	ChoisirCouleurDessin(c);
-	ChargerImageFond("./images/xp.jpg");
+	ChargerImageFond("./xp.jpg");
 	ChargerImage("./images/logo2.png",525,0,0,0,150,150);
-	ChargerImage("./images/ani2.jpg",25,350,0,0,350,350);
-	ChargerImage("./images/ani3.jpg",487,350,0,0,350,350);
-	ChargerImage("./images/ani4.jpg",950,350,0,0,350,350);
+	ChargerImage("./images/ani2.jpg",25,350,0,0,350,350); /* image 1 */ 
+	ChargerImage("./images/ani3.jpg",487,350,0,0,350,350); /* image 2 */
+	ChargerImage("./images/ani4.jpg",950,350,0,0,350,350); /* image 3 */
 	DessinerRectangle(25,350,225,225);
 	DessinerRectangle(487,350,225,225);
 	DessinerRectangle(950,350,225,225);
@@ -82,6 +88,8 @@ void ecrantitre(void){
 			ChoisirCouleurDessin(c);
 			DessinerRectangle(487,350,225,225);
 			DessinerRectangle(950,350,225,225);
+			/* hauteurImage=640; */
+			/* largeurImage=960; */
 		}
 
 		if (choiximage==2){
@@ -106,6 +114,28 @@ void ecrantitre(void){
 		}
 
 		CopierZone(1,0,0,0,LONGFENETR,HAUTFENETR,0,0);
+
+		/* début curseurClavier */
+		
+		if (curseurClavierLigne == 1 && curseurClavierColonne == 1){
+		  c=CouleurParNom("red");
+		  ChoisirCouleurDessin(c);
+		  RemplirTriangle(620,295,634,310,620,325);
+		}
+
+		/* début curseurClavier */
+
+		if (ToucheEnAttente()){
+		  t=Touche();
+		  if (curseurClavierLigne == 0 && curseurClavierColonne == 0) {
+		    curseurClavierLigne=1;
+		    curseurClavierColonne=1;
+		  } else {
+		    /* gestion pour chaque touche (haut/bas = ligne + 1 si possible, gauche/droite = colonne + 1 si possible) */
+		  }
+		}
+
+		/* début curseurClavier */
 
 		if (SourisCliquee()){
 
