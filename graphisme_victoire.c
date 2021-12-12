@@ -17,7 +17,7 @@ void ecranvictoire(void){
 	c=CouleurParNom("red");
 	ChoisirCouleurDessin(c);
 	EcrireTexte(100,100,"VIKTOIRRRRRRRRRRR !!!!!!!!!",1); /* marche pas */
-	CopierZone(2,0,0,0,1200,800,0,0);
+	CopierZone(2,0,0,0,LONGFENETR,HAUTFENETR,0,0);
 	c=CouleurParNom("gray");
 	ChoisirCouleurDessin(c);
 	RemplirRectangle(400,650,150,50);
