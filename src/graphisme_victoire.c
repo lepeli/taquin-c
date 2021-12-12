@@ -7,6 +7,7 @@
 
 
 void ecranvictoire(void){
+    int sortir;
     couleur c;
     ChoisirEcran(2);
     ChargerImageFond("./images/xp.jpg");
@@ -15,22 +16,21 @@ void ecranvictoire(void){
     ChoisirCouleurDessin(c);
     EcrireTexte(100,100,"VIKTOIRRRRRRRRRRR !!!!!!!!!",1); /* marche pas */
     CopierZone(2,0,0,0,LONGFENETR,HAUTFENETR,0,0);
-    c=CouleurParNom("gray");
-    ChoisirCouleurDessin(c);
-    RemplirRectangle(400,650,150,50);
-    c=CouleurParNom("black");
-    ChoisirCouleurDessin(c);
-    DessinerRectangle(400,650,150,50);
+
+    ChargerImage("./images/ecrantitre.png",LONGFENETR/2-(151*3/2),650,0,0,151,51);
+    ChargerImage("./images/quitter.png",LONGFENETR/2+(151*2/3)-23,650,0,0,151,51);
 
     CopierZone(2,0,0,0,LONGFENETR,HAUTFENETR,0,0);
 
-    while (1){
+    while (sortir!=1){
         if (SourisCliquee()){
-            if (_X>=400 && _X<=550 && _Y>=650 && _Y<=700){
+            if (_X>=LONGFENETR/2+(151*2/3)-23 && _X<=LONGFENETR/2+(151*2/3)-23+151 && _Y>=650 && _Y<=701){
                 FermerGraphique();
-                break;
+                /* On quitte le programme */
             }
+            if (_X>=LONGFENETR/2-(151*3/2) && _X<=LONGFENETR/2-(151*3/2)+151 && _Y>=650 && _Y<=701){
+                sortir=1;
         }
     }
-
+    }
 }

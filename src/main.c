@@ -16,6 +16,7 @@ Point d'entrée du programme du taquin. Celui qui va gérer tous les appels des 
 /* @TO DO: Faire l'ordre des appels ici */
 
 int main(void){
+    while (1){
     int grille[8][8]; /* On initialise ici la grille du taquin pour pouvoir l'utiliser ensuite */
     int nbColonnes, nbLignes;
     int choiximage;
@@ -25,7 +26,8 @@ int main(void){
     choiximage = ecranmenu(&nbLignes, &nbColonnes);
 
     ChoisirTitreFenetre("Taquin");
+    /* deroulejeu(grille, nbLignes, nbColonnes, choiximage); */
     deroulejeu(grille, 2, 2, choiximage);
-
     return EXIT_SUCCESS;
+    }
 }

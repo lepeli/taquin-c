@@ -109,8 +109,6 @@ int ecranmenu(int* nbLignes, int* nbColonnes){
             ChoisirCouleurDessin(c);
             DessinerRectangle(LONGFENETR/2-225/2,350,225,225);
             DessinerRectangle(LONGFENETR-398-25,350,398,225);
-            /*hauteurImage=640;*/
-            /*largeurImage=960;*/
         }
 
         if (choiximage==2){
