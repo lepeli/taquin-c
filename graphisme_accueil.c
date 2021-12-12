@@ -32,7 +32,7 @@ void ecrantitre(void){
 	ChoisirTitreFenetre("Taquin");
 	c=CouleurParNom("black");
 	ChoisirCouleurDessin(c);
-	ChargerImageFond("./xp.jpg");
+	ChargerImageFond("./images/xp.jpg");
 	ChargerImage("./images/logo2.png",525,0,0,0,150,150);
 	ChargerImage("./images/ani2.jpg",25,350,0,0,350,350); /* image 1 */ 
 	ChargerImage("./images/ani3.jpg",487,350,0,0,350,350); /* image 2 */
