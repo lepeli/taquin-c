@@ -26,8 +26,7 @@ int main(void){
     choiximage = ecranmenu(&nbLignes, &nbColonnes);
 
     ChoisirTitreFenetre("Taquin");
-    /* deroulejeu(grille, nbLignes, nbColonnes, choiximage); */
-    deroulejeu(grille, 2, 2, choiximage);
+    deroulejeu(grille, nbLignes, nbColonnes, choiximage);
     return EXIT_SUCCESS;
     }
 }
