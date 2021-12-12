@@ -8,9 +8,7 @@
 
 
 void ecranvictoire(void){
-
     couleur c;
-
     ChoisirEcran(2);
     ChargerImageFond("./images/xp.jpg");
     ChargerImage("./images/victorydenis.png",350,150,0,0,480,359);

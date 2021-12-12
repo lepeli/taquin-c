@@ -5,8 +5,8 @@
 #define LONGFENETR 1400
 #define HAUTFENETR 800
 
-void printcase(int casevoulue){
-
+void printcase(int grille[8][8]){
+    int casevoulue;
     couleur coul;
 
     coul=CouleurParNom("black");
@@ -28,7 +28,6 @@ void printcase(int casevoulue){
     int x,y;
     int largeurcasecree, hauteurcasecree;
 
-    int suite[8][8];
     int compteursuite=0;
 
     ChoisirEcran(3);
@@ -38,13 +37,13 @@ void printcase(int casevoulue){
     if (choiximage==1){
         largeurimage=600;
         hauteurimage=399;
-        ChargerImage("./iut.png",0,0,0,0,600,399);
+        ChargerImage("./images/iut.png",0,0,0,0,600,399);
     }
 
     if (choiximage==2){
         largeurimage=480;
         hauteurimage=359;
-        ChargerImage("./victorydenis.png",0,0,0,0,480,359);
+        ChargerImage("./images/victorydenis.png",0,0,0,0,480,359);
     }
 
     /* autres choix image */
@@ -57,7 +56,7 @@ void printcase(int casevoulue){
         /* à utiliser :  */
         /* decoupagecolonne / decoupageligne / suite */
 
-        casevoulue=suite[x][y]; /* à intégrer avec fonction random */
+        casevoulue=grille[x][y]; /* à intégrer avec fonction random */
 
         /* pour déroulé jeu : possibilité de reparcourir ce code avec un "cache" pour ne charger l'image que quand il y a besoin d'un changement */
 
@@ -70,7 +69,7 @@ void printcase(int casevoulue){
         largeurcasecree=largeurimage/decoupagecolonne*casevoulue; 
         hauteurcasecree=hauteurimage/decoupageligne*lignecase;
         if (casevoulue != 0 && lignecase != 0){
-            ChargerImage("./victorydenis.png",700+largeurimagecree+decalage,hauteurimagecree+decalagehauteur,largeurcasecree, hauteurcasecree, largeurimage/decoupagecolonne, hauteurimage/decoupageligne);
+            ChargerImage("./images/victorydenis.png",700+largeurimagecree+decalage,hauteurimagecree+decalagehauteur,largeurcasecree, hauteurcasecree, largeurimage/decoupagecolonne, hauteurimage/decoupageligne);
             largeurimagecree=largeurimagecree+(largeurimage/decoupagecolonne);
         }
         decalage=decalage+5;
