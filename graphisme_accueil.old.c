@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-#include"graphisme_accueil.h"
+/* #include"graphisme_accueil.h" */
 #include"constants.h"
 
 void ecrantitre(void){

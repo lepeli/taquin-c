@@ -5,7 +5,7 @@
 
 #include"constants.h"
 
-int ecrantitre(int* nbLignes, int* nbColonnes){
+int ecranmenu(int* nbLignes, int* nbColonnes){
 
     int x,y; /* pour pos souris */
 
@@ -23,11 +23,7 @@ int ecrantitre(int* nbLignes, int* nbColonnes){
 
     KeySym t;
 
-    InitialiserGraphique();
-
     ChoisirEcran(1);
-    CreerFenetre(0,0,LONGFENETR,HAUTFENETR);
-    ChoisirTitreFenetre("Taquin");
     c=CouleurParNom("black");
     ChoisirCouleurDessin(c);
     ChargerImageFond("./images/xp.jpg");
@@ -270,10 +266,43 @@ int ecrantitre(int* nbLignes, int* nbColonnes){
         } else {
 
             if (t == XK_Return){
-            if (curseurClavierLigne == 1){
-            if (curseurClavierColonne == 1){
-            /* gestion touche entrée */
-            }
+                if (curseurClavierLigne == 1){
+                    if (curseurClavierColonne == 1 && nbrlignes>3){
+                        nbrlignes--;
+                    }
+                    if (curseurClavierColonne == 2 && nbrlignes<8){
+                        nbrlignes++;
+                    }
+                    if (curseurClavierColonne == 3 && nbrcolonnes>3){
+                        nbrcolonnes--;
+                    }
+                    if (curseurClavierColonne == 4 && nbrcolonnes<8){
+                        nbrcolonnes++;
+                    }
+                }
+                if (curseurClavierLigne == 2){
+                    if (curseurClavierColonne == 1){
+                        choiximage=1;
+                    }
+                    if (curseurClavierColonne == 2){
+                        choiximage=2;
+                    }
+                    if (curseurClavierColonne == 3){
+                        choiximage=3;
+                    }
+                }
+                if (curseurClavierLigne == 3){
+                    if (curseurClavierColonne == 1){
+                        if (choiximage == 1 || choiximage == 2 || choiximage == 3){
+                            *nbColonnes = nbrcolonnes;
+                            *nbLignes = nbrlignes;
+
+                            return choiximage;
+                        }
+                    }
+                    if (curseurClavierColonne == 2){
+                        FermerGraphique();
+                    }
                 }
             }
 
@@ -359,8 +388,14 @@ int ecrantitre(int* nbLignes, int* nbColonnes){
             }
 
             if (_X>=LONGFENETR/2-(151*3/2) && _X<=LONGFENETR/2-(151*3/2)+151 && _Y>=650 && _Y<=701){
-                break;
-                /* lancement du jeu */
+                if (choiximage == 1 || choiximage == 2 || choiximage == 3){
+                    *nbColonnes = nbrcolonnes;
+                    *nbLignes = nbrlignes;
+
+                    return choiximage;
+
+                    /* jouer */
+                }
             }
         }
     }

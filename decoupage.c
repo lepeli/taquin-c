@@ -15,8 +15,7 @@ void ecrantitre(void){
 	int choiximage;
 	couleur c;
 	int nbrlignes=3;
-	int hauteurImage;
-	int LargeurImage;
+
 
 	InitialiserGraphique();
 
