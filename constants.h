@@ -1,0 +1,5 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+#define LONGFENETR 1400
+#define HAUTFENETR 800
+#endif

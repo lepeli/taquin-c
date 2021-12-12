@@ -2,11 +2,11 @@
 #include <stdio.h> /* pour pos_souris */
 #include <stdlib.h>
 #include <string.h>
-#define LONGFENETR 1400
-#define HAUTFENETR 800
+#include"constants.h"
 
 void printcase(int grille[8][8], int decoupageligne, int decoupagecolonne){
     int casevoulue;
+    int caseactuelle;
     couleur coul;
 
     coul=CouleurParNom("black");
@@ -52,7 +52,7 @@ void printcase(int grille[8][8], int decoupageligne, int decoupagecolonne){
 
         /* à utiliser :  */
         /* decoupagecolonne / decoupageligne / suite */
-
+        caseactuelle = grille[x][y];
         casevoulue=grille[x][y]; /* à intégrer avec fonction random */
 
         /* pour déroulé jeu : possibilité de reparcourir ce code avec un "cache" pour ne charger l'image que quand il y a besoin d'un changement */
@@ -65,10 +65,14 @@ void printcase(int grille[8][8], int decoupageligne, int decoupagecolonne){
 
         largeurcasecree=largeurimage/decoupagecolonne*casevoulue; 
         hauteurcasecree=hauteurimage/decoupageligne*lignecase;
-        if (casevoulue != 0 && lignecase != 0){
+        if(caseactuelle != 0){
             ChargerImage("./images/victorydenis.png",700+largeurimagecree+decalage,hauteurimagecree+decalagehauteur,largeurcasecree, hauteurcasecree, largeurimage/decoupagecolonne, hauteurimage/decoupageligne);
-            largeurimagecree=largeurimagecree+(largeurimage/decoupagecolonne);
+        } else{
+            ChargerImage("./images/victorydenis.png",700+largeurimagecree+decalage,hauteurimagecree+decalagehauteur,8000, 980000, largeurimage/decoupagecolonne, hauteurimage/decoupageligne);
+
         }
+            largeurimagecree=largeurimagecree+(largeurimage/decoupagecolonne);
+
         decalage=decalage+5;
         }
     hauteurimagecree=hauteurimagecree+(hauteurimage/decoupageligne);

@@ -1,5 +1,6 @@
 #ifndef GRAPHISME_ACCUEIL_H
 
 #define GRAPHISME_ACCUEIL_H
-void ecrantitre(void);
+int ecrantitre(int* nbLignes, int* nbColonnes);
+
 #endif

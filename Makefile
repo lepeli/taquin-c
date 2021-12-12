@@ -14,7 +14,7 @@ graphisme_victoire.o: graphisme_victoire.c graphisme_victoire.h
 graphisme_accueil.o: graphisme_accueil.c graphisme_accueil.h
 	gcc -ansi -c graphisme_accueil.c 
 decoupagev2.o: decoupagev2.h decoupagev2.c
-	gcc -ansi -c decoupagev2.c
+	gcc -c decoupagev2.c
 clean:
 	rm *.o *.out
 .PHONY: clean

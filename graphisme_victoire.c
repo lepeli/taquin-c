@@ -1,10 +1,9 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<graph.h>
-#include"graphisme_victoire.h"
 
-#define LONGFENETR 1200
-#define HAUTFENETR 800
+#include"graphisme_victoire.h"
+#include"constants.h"
 
 
 void ecranvictoire(void){

@@ -6,7 +6,6 @@
 #include"mouvements_helper.h"
 
 
-
 void initialisation_grille(int nbLignes, int nbColonnes, int tab[8][8]){
     /* 
         Initialise la grille 
