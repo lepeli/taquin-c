@@ -2,11 +2,12 @@
 #include<stdio.h>
 #include<graph.h>
 
-#include"graphisme_victoire.h"
 #include"graphisme_accueil.h"
 #include"generateur.h"
 #include"decoupagev2.h"
 #include"constants.h"
+#include"jeu.h"
+
 /* 
 Point d'entrée du programme du taquin. Celui qui va gérer tous les appels des différentes parties.
 */
@@ -20,12 +21,11 @@ int main(void){
     int choiximage;
     InitialiserGraphique();
     CreerFenetre(0,0, LONGFENETR, HAUTFENETR);
+    ChoisirTitreFenetre("Taquin");
     choiximage = ecranmenu(&nbLignes, &nbColonnes);
 
-    generation_grille(grille, nbLignes, nbColonnes);
-
     ChoisirTitreFenetre("Taquin");
-    printgrille(grille, nbLignes, nbColonnes, choiximage);
+    deroulejeu(grille, 2, 2, choiximage);
 
     return EXIT_SUCCESS;
 }

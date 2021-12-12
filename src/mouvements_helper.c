@@ -31,7 +31,7 @@ int is_mouvement_possible(mouvements move, int posLigne, int posColonne, int nbL
     return 0;
 }
 
-mouvements get_possible_click_mouvements(int posLigne, int posColonne, int nbLignes, int nbColonnes, int grille[8][8]){
+mouvements get_possible_click_mouvement(int posLigne, int posColonne, int nbLignes, int nbColonnes, int grille[8][8]){
     /* Fonction qui retourne le mouvement (équivalent touche clavier) possible avec le click de la souris */
 
     /* On vérifie si la case concernée n'est pas le trou */

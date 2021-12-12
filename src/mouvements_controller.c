@@ -24,7 +24,7 @@ void do_random_move(int grille[8][8], int nbLignes, int nbColonnes){
     keyboard_move_grille(random_move, grille, nbLignes, nbColonnes);
 }
 
-void keyboard_move_grille(mouvements move, int grille[8][8], int nbLignes, int nbColonnes){
+int keyboard_move_grille(mouvements move, int grille[8][8], int nbLignes, int nbColonnes){
     /* On modifie la grille après avoir reçu le mouvements depuis les évenements clavier */
     int posLigne, posColonne;
     int mv_possible;
@@ -36,10 +36,22 @@ void keyboard_move_grille(mouvements move, int grille[8][8], int nbLignes, int n
 
     if(mv_possible){
         move_element_grille(move, grille, nbLignes, nbColonnes);
+        return 1;
     }
+    return 0;
 
 }
-void click_move_grille(){}
+
+int click_move_grille(int grille[8][8], int posLigne, int posColonne, int nbLignes, int nbColonnes){
+    mouvements move_possible = get_possible_click_mouvement(posLigne, posColonne, nbLignes, nbColonnes, grille);
+
+    if(move_possible == NONE){
+        return 0;
+    }
+
+    move_element_grille(move_possible, grille, nbLignes, nbColonnes);
+    return 1;
+}
 
 
 void move_element_grille(mouvements move, int grille[8][8], int nbLignes, int nbColonnes){
