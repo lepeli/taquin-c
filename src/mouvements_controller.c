@@ -44,7 +44,6 @@ int keyboard_move_grille(mouvements move, int grille[8][8], int nbLignes, int nb
 
 int click_move_grille(int grille[8][8], int posLigne, int posColonne, int nbLignes, int nbColonnes){
     mouvements move_possible = get_possible_click_mouvement(posLigne, posColonne, nbLignes, nbColonnes, grille);
-
     if(move_possible == NONE){
         return 0;
     }

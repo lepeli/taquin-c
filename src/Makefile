@@ -1,4 +1,4 @@
-OFILES = main.o mouvements_controller.o mouvements_helper.o generateur.o graphisme_victoire.o graphisme_accueil.o decoupagev2.o
+OFILES = main.o mouvements_controller.o mouvements_helper.o generateur.o graphisme_victoire.o graphisme_accueil.o decoupagev2.o jeu.o
 main.out: $(OFILES)
 	gcc ${OFILES} -o main.out -lgraph
 mouvements_controller.o: mouvements_helper.o mouvements_controller.h mouvements_controller.c
@@ -14,7 +14,9 @@ graphisme_victoire.o: graphisme_victoire.c graphisme_victoire.h
 graphisme_accueil.o: graphisme_accueil.c graphisme_accueil.h
 	gcc -ansi -c graphisme_accueil.c 
 decoupagev2.o: decoupagev2.h decoupagev2.c
-	gcc -c decoupagev2.c
+	gcc -ansi -c decoupagev2.c
+jeu.o: jeu.c jeu.h 
+	gcc -ansi -c jeu.c
 clean:
 	rm *.o *.out
 .PHONY: clean

@@ -57,7 +57,7 @@ mouvements get_possible_click_mouvement(int posLigne, int posColonne, int nbLign
         }
     }
     /* Check en haut*/
-    if (posLigne - 1 >= nbLignes) {
+    if (posLigne - 1 <= nbLignes) {
         if(grille[posLigne -1][posColonne] == 0){
             return HAUT;
         }
